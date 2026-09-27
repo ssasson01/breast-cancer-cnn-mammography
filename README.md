@@ -3,12 +3,8 @@ CNN-based breast cancer detection from mammography (CBIS-DDSM), comparing a base
 
 **Demo:** https://breast-cancer-cnn-mammography-lyxpxpa4wdmtbtctmyyhfk.streamlit.app/
 
----
-
 ## Dataset
 [CBIS-DDSM](https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset) (Lee et al., 2017)
-
----
 
 ## Repository Structure
 
