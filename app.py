@@ -4,6 +4,7 @@ Deep Learning Breast Cancer Detection - Web App
 Research prototype only - not a diagnostic tool. Do not use for real clinical decisions.
 """
 # Imports
+import os
 import numpy as np
 import cv2
 import streamlit as st
@@ -11,7 +12,8 @@ from PIL import Image
 import tensorflow as tf
 
 # Trained model
-MODEL_PATH = "best_model.keras"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model", "best_model.keras")
 IMG_SIZE = 224
 # Browser tab title and icon
 st.set_page_config(page_title="Breast Cancer Detection", page_icon=":stethoscope:")
