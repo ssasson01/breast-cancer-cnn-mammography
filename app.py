@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "model", "best_model.keras")
 IMG_SIZE = 224
 # Browser tab title and icon
-st.set_page_config(page_title="Breast Cancer Detection", page_icon=":stethoscope:")
+st.set_page_config(page_title="Breast Cancer Detection", page_icon="🎗️", layout="centered")
 
 # Loads the trained model from disk once and caches it across sessions.
 @st.cache_resource
