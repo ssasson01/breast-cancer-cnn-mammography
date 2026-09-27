@@ -15,8 +15,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "model", "best_model.keras")
 SAMPLES_DIR = os.path.join(BASE_DIR, "samples")
 IMG_SIZE = 224
-# Decision threshold selected on the validation set with Youden's J statistic
-# (same threshold used for the reported test-set results)
+# Decision threshold
 THRESHOLD = 0.591
 
 # Browser tab title and icon
@@ -104,8 +103,7 @@ if file_bytes is not None:
     with col2:
         st.image(processed.astype(np.uint8), caption="Preprocessed (CLAHE, 224×224)", width=300)
 
-    # Add a batch dimension (the model expects shape (batch, H, W, 3)) and
-    # run inference, extracting the single sigmoid output as a plain float.
+    # Add a batch dimension and run inference
     batch = processed[np.newaxis, ...]
     prob = float(model.predict(batch, verbose=0)[0, 0])
 
