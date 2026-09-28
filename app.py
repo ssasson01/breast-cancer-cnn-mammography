@@ -66,14 +66,14 @@ st.warning(
 model = load_model()
 
 # Image source: sample picker or own upload
-source = st.radio("Image source", ["Use a sample image", "Upload my own"], horizontal=True)
+source = st.radio("Image source", ["Use a sample image", "Upload my own"], horizontal=True, index=None)
 
 file_bytes, name, true_label = None, None, None
 
 if source == "Use a sample image":
     samples = list_samples()
     if samples:
-        name = st.selectbox("Sample mammogram (CBIS-DDSM test set)", samples)
+        name = st.selectbox("Sample mammogram (CBIS-DDSM test set)", samples, index=None, placeholder="Choose a sample image...")
         with open(os.path.join(SAMPLES_DIR, name), "rb") as f:
             file_bytes = f.read()
         # The true label is encoded in the filename (benign_... / malignant_...)
