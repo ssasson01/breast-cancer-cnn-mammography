@@ -40,8 +40,10 @@ streamlit run app.py
 
 Then open http://localhost:8501 and upload a mammogram mass image (JPEG or PNG).
 
+The `samples/` folder contains 10 mammograms (5 benign, 5 malignant) from the CBIS-DDSM **test set**, so the model never saw them during training. They're available in the app's "Use a sample image" option, and each filename includes the true label so you can compare it with the model's prediction.
+
 ## Reproducing the training
-Open the notebook in Google Colab with a T4 GPU runtime. Add your Kaggle credentials as Colab secrets (`KAGGLE_USERNAME`, `KAGGLE_KEY`), then run the cells in order. Results can vary between runs because of non-deterministic GPU training and the small dataset.
+Open the notebook notebook/Deep_Learning_Breast_Cancer_Colab.ipynb in Google Colab with a T4 GPU runtime. Add your Kaggle credentials as Colab secrets (`KAGGLE_USERNAME`, `KAGGLE_KEY`), then run the cells in order. Results can vary between runs because of non-deterministic GPU training and the small dataset.
 
 ## Limitations
 - The model misses about 46% of malignant cases (sensitivity 0.544).
