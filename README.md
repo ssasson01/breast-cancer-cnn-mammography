@@ -3,12 +3,31 @@ CNN-based breast cancer detection from mammography (CBIS-DDSM), comparing a base
 
 **Demo:** https://breast-cancer-cnn-mammography-lyxpxpa4wdmtbtctmyyhfk.streamlit.app/
 
-**Research prototype only - not a diagnostic tool. Sensitivity on held-out test data is well below clinical benchmarks; do not use this for real clinical decisions.
+**Research prototype only - not a diagnostic tool.** Sensitivity on held-out test data is well below clinical benchmarks; do not use this for real clinical decisions.
+
+## Results
+Held-out CBIS-DDSM test set (n = 378):
+
+| Model | AUC-ROC | Sensitivity | Specificity | Accuracy |
+|---|---|---|---|---|
+| Baseline CNN (from scratch, 64×64) | 0.6350 | 0.483 | 0.732 | 63.5% |
+| **EfficientNetB0 (transfer learning, 224×224)** | **0.7092** | **0.544** | **0.732** | **65.9%** |
+
+EfficientNetB0 uses a decision threshold of 0.591, chosen on the validation set with Youden's J statistic.
 
 ## Dataset
 [CBIS-DDSM](https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset) (Lee et al., 2017)
 
 ## Repository Structure
+```
+   ├── app.py                                                                # Streamlit app
+   ├── requirements.txt
+   ├── model/
+   │   └── best_model.keras                                                  # Trained model
+   ├── notebook/
+   │   └── Deep_Learning_Breast_Cancer_Colab.ipynb                           # ipynb file from Google Colab
+   └── samples/                                                               # 10 CBIS-DDSM test images to try in the app
+```
 
 ## Running the app locally
 
