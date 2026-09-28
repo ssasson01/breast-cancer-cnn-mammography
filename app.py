@@ -74,7 +74,8 @@ if source == "Use a sample image":
     samples = list_samples()
     if samples:
         name = st.selectbox("Sample mammogram (CBIS-DDSM test set)", samples, index=None, placeholder="Choose a sample image...")
-        with open(os.path.join(SAMPLES_DIR, name), "rb") as f:
+        if name is not None:
+         with open(os.path.join(SAMPLES_DIR, name), "rb") as f:
             file_bytes = f.read()
         # The true label is encoded in the filename (benign_... / malignant_...)
         true_label = "Malignant" if name.lower().startswith("malignant") else "Benign"
